@@ -1,0 +1,92 @@
+
+/* selects all tags and resets default values to 0 */
+/* We don't want to rely on the browser defaults */
+
+* {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color:black;
+    /* These properties will be inherited by the children element */
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    /* flex wrap lets them stack when desktop squeezed */
+    /* without it the items will distort */
+}
+
+/* ">" selector: child combinator */
+header > h1 {
+    text-align: center;
+    padding: 10px;
+    /* padding top right bottom left */
+}
+
+/* applies to all articles */
+article {
+    width: 400px;
+    border: 4px solid white;
+    border-radius: 8px;
+    margin: 10px;
+    text-align: left;
+}
+
+article h2 {
+    color: gray;
+    padding: 4px 8px;   /* top and bottom left and right; */
+}
+
+article:first-of-type {
+    border: 4px solid gray;
+}
+
+/* This id has a higher specificit so it beats out the article selector */
+#inprogress {
+    border: 4px solid red;
+}
+
+#inprogress h2 {
+   color: red;
+}
+
+#done {
+    border: 4px solid green;
+}
+
+#done h2 {
+    color: green;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    padding: 6px 8px;
+    text-transform: uppercase;
+}
+
+ .todo li:nth-child(odd) { 
+    background-color: rgba(255, 255, 255, .2);
+}
+
+/*.todo li:nth-child(4) {
+    background-color: rgba(255, 255, 255, .2);
+}*/
+
+.inprogress li:nth-child(odd) {
+    background-color: rgba(255, 0, 0, .5);
+}
+
+.done li:nth-child(odd) {
+    background-color: rgba(0, 255, 0, .5);
+}
